@@ -21,6 +21,7 @@ gem "carrierwave",             "0.11.2"
 gem "mini_magick",             "4.5.1"
 gem "fog",                     "1.38.0"
 gem "faker",                   "1.6.6"
+gem "config"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

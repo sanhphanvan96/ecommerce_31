@@ -1,2 +1,5 @@
 en:
-  home: "Ecommerce"
+  title:
+    default: "Ecommerce"
+    home: "Home"
+    about: "About"

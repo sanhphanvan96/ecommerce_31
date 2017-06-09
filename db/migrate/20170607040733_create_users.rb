@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :phone
       t.boolean :is_admin, default: false
       t.integer :cart_id
-      t.boolean :is_actived, default: false
+      t.boolean :is_actived, default: true
 
       t.timestamps
     end

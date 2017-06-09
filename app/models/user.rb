@@ -10,11 +10,17 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {maximum: Settings.max_name}
   validates :email, presence: true, length: {maximum: Settings.max_email},
     format: {with: Settings.VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
-  validates :phone, presence: true, length: {maximum: Settings.max_phone},
+  validates :password, presence: true, length: {minimum: Settings.min_password}
+  validates :phone, length: {maximum: Settings.max_phone},
     format: {with: Settings.VALID_PHONE_REGEX}
   validates :address, length: {maximum: Settings.max_name}
   has_secure_password
-  validates :password, presence: true, length: {minimum: Settings.min_password}
+
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
 
   private
 

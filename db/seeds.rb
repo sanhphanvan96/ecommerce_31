@@ -19,3 +19,22 @@ User.create!(name: "Phan Van Sanh",
     phone: phone,
     address: address)
 end
+
+25.times do |n|
+  name  = "App store"
+  price = Faker::Number.number(5) + "00.0"
+  image = "https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/app_store-512.png"
+  description = "An app store (or app marketplace) is a type of digital distribution platform for computer software"
+  subcategory_id = #{n+1}
+  quantity = "15"
+  views = "5"
+  rating_id = #{n}
+  Product.create!(name: name,
+    price: price,
+    image: image,
+    description: description,
+    subcategory_id: subcategory_id,
+    quantity: quantity,
+    views: views,
+    rating_id: rating_id)
+end

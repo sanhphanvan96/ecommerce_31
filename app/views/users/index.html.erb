@@ -1,0 +1,37 @@
+<% provide(:title, "All users") %>
+<h1>All users</h1>
+<div class=table-responsive >
+  <table class="table table-bordered">
+    <thead class="thead-inverse">
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <% @users.each do |user| %>
+    <tbody>
+      <% if user.id.even?%>
+        <tr class="rowhighlight">
+      <% else %>
+        <tr>
+      <% end %>
+          <td><%= user.id%></td>
+          <td><%= link_to "#{user.name}", get_user_by_id(user.id) %></td>
+          <td><%= user.email %></td>
+          <td><%= user.phone %></td>
+          <td><%= user.address %></td>
+          <td>
+            <a class="blue-text"><i class="glyphicon glyphicon-info-sign"></i></a>
+            <a class="blue-text"><i class="glyphicon glyphicon-remove-sign"></i></a>
+            <a class="blue-text"><i class="glyphicon glyphicon-pencil"></i></a>
+          </td>
+        </tr>
+
+    </tbody>
+    <% end %>
+  </table>
+</div>

@@ -115,3 +115,9 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
+
+.rowhighlight {
+  td {
+    background: $gray-medium-light
+  }
+}

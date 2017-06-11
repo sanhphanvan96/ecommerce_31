@@ -12,7 +12,7 @@ class User < ApplicationRecord
     format: {with: Settings.VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {minimum: Settings.min_password}
   validates :phone, length: {maximum: Settings.max_phone},
-    format: {with: Settings.VALID_PHONE_REGEX}
+    format: {with: Settings.VALID_PHONE_REGEX}, :allow_blank => true
   validates :address, length: {maximum: Settings.max_name}
   has_secure_password
 

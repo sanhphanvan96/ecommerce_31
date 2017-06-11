@@ -4,3 +4,4 @@ max_name: 50
 max_email: 255
 max_phone: 11
 min_password: 6
+max_product_per_pages: 16

@@ -10,6 +10,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    return if @user
+    flash[:danger] = t "error.user.not_found"
+    redirect_to root_path
   end
 
   def new

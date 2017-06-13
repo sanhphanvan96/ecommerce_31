@@ -1,7 +1,6 @@
 class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
-  has_many :ratings, dependent: :destroy
   has_many :suggestions, dependent: :destroy
   has_many :carts, dependent: :destroy
   has_many :orders, dependent: :destroy
@@ -14,6 +13,15 @@ class User < ApplicationRecord
     format: {with: Settings.VALID_PHONE_REGEX}, allow_blank: true
   validates :address, length: {maximum: Settings.max_name}, allow_blank: true
   has_secure_password
+  validates :password, presence: true, length: {minimum: Settings.min_password},
+    allow_nil: true
+  scope :order_by_created_at, ->{order created_at: :desc}
+
+  def User.digest string
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+      BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
 
   private
 
@@ -21,3 +29,4 @@ class User < ApplicationRecord
     self.email = email.downcase
   end
 end
+

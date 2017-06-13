@@ -1,20 +1,40 @@
 <% provide :title, @user.name %>
-<div class=table-responsive >
+<div class="table-responsive container padding-table" >
   <table class="table table-bordered">
     <thead>
       <tr>
+        <th class="center"><%= t "user.index" %></th>
         <th><%= t "user.name" %></th>
         <th><%= t "user.email" %></th>
         <th><%= t "user.phone" %></th>
         <th><%= t "user.address" %></th>
+        <th><%= t "user.action" %></th>
       </tr>
     </thead>
     <tbody>
       <tr>
+        <td class="center"><%= @user.id %></td>
         <td><%= @user.name %></td>
         <td><%= @user.email %></td>
         <td><%= @user.phone %></td>
         <td><%= @user.address %></td>
+        <td class="center user-action">
+          <%= link_to user_path(@user.id), class: "btn btn-light btn-xs" do %>
+            <i class="glyphicon glyphicon-info-sign"></i>
+          <% end %>
+          <% if current_user.is_admin? || current_user?(@user) %>
+            <%= link_to @user, method: :delete,
+              data: {confirm: t("alert.confirm_delete")},
+              class: "btn btn-light btn-xs" do %>
+            <i class="glyphicon glyphicon-remove-sign"></i>
+            <% end %>
+          <% end %>
+          <% if current_user?(@user) %>
+            <%= link_to edit_user_path(@user), class: "btn btn-light btn-xs" do %>
+              <i class="glyphicon glyphicon-pencil"></i>
+            <% end %>
+          <% end %>
+        </td>
       </tr>
   </table>
 </div>

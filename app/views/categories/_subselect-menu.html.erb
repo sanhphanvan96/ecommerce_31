@@ -1,0 +1,9 @@
+<optgroup>
+  <% subcategories.each do |sub| %>
+    <option value="<%=sub.id%>"><%= sub.name %></option>
+    <% if sub.subcategories.present? %>
+      <%= render partial: "/categories/subselect-menu",
+        locals: {subcategories: sub.subcategories} %>
+    <% end %>
+  <% end %>
+</optgroup>

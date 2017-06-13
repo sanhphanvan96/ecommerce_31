@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
   before_action :load_category
+  before_action :initialize_cart
 
   def logged_in_user
     unless logged_in?
@@ -41,5 +42,9 @@ class ApplicationController < ActionController::Base
 
   def reset_cache
     :reset_cache
+  end
+
+  def initialize_cart
+    @cart = Cart.build_from_hash session
   end
 end

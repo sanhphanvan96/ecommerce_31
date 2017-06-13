@@ -1,12 +1,9 @@
-<select>
-  <option value="">All Categories</option>
-  <% @categories.each do |category| %>
-    <% if category.parent_id.blank? %>
-      <option value="<%=category.id%>"><%= category.name %></option>
+<select style="height: 33px; width: 150px;">
+    <option value="">All Categories</option>
+    <% @categories.each do |category| %>
       <% if category.subcategories.present? %>
-        <%= render partial: "/categories/subselect-menu",
-          locals: {subcategories: category.subcategories} %>
-      <% end %>
+        <option value=""><%= category.name %></option>
+        <%= render partial: "/categories/subcategory", locals: {subcategories: category.subcategories} %>
+        <% end %>
     <% end %>
-  <% end %>
 </select>

@@ -82,3 +82,9 @@ en:
     description: "Description"
     parent_category: "Parent category"
     review_categories: "Review categories"
+  cart:
+    btn-add: "+"
+    btn-sub: "-"
+    btn-delete: "x"
+    btn-viewcart: "View Cart"
+    btn-addtocart: "Add to Cart"

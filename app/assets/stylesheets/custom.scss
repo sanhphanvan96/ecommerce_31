@@ -165,51 +165,51 @@ table tr.even {
 
 /* dropdown */
 .dropdown-submenu {
-    position: relative;
+  position: relative;
 }
 
 .dropdown-submenu>.dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-top: -6px;
-    margin-left: -1px;
-    -webkit-border-radius: 0 6px 6px 6px;
-    -moz-border-radius: 0 6px 6px;
-    border-radius: 0 6px 6px 6px;
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  -webkit-border-radius: 0 6px 6px 6px;
+  -moz-border-radius: 0 6px 6px;
+  border-radius: 0 6px 6px 6px;
 }
 
 .dropdown-submenu:hover>.dropdown-menu {
-    display: block;
+  display: block;
 }
 
 .dropdown-submenu>a:after {
-    display: block;
-    content: " ";
-    float: right;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    border-style: solid;
-    border-width: 5px 0 5px 5px;
-    border-left-color: #ccc;
-    margin-top: 5px;
-    margin-right: -10px;
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #ccc;
+  margin-top: 5px;
+  margin-right: -10px;
 }
 
 .dropdown-submenu:hover>a:after {
-    border-left-color: #fff;
+  border-left-color: #fff;
 }
 
 .dropdown-submenu.pull-left {
-    float: none;
+  float: none;
 }
 
 .dropdown-submenu.pull-left>.dropdown-menu {
-    left: -100%;
-    margin-left: 10px;
-    -webkit-border-radius: 6px 0 6px 6px;
-    -moz-border-radius: 6px 0 6px 6px;
-    border-radius: 6px 0 6px 6px;
+  left: -100%;
+  margin-left: 10px;
+  -webkit-border-radius: 6px 0 6px 6px;
+  -moz-border-radius: 6px 0 6px 6px;
+  border-radius: 6px 0 6px 6px;
 }
 
 /*search box*/
@@ -230,5 +230,43 @@ table tr.even {
   //margin-top: 6px;
 }
 .away-header {
-  padding-top: 20px;
+  padding-top: 30px;
+}
+/* cart */
+ul.dropdown-cart{
+  min-width:250px;
+  li {
+    .item{
+      width: 400px;
+      height: 100px;
+      display:block;
+      padding:3px 10px;
+      margin: 3px 0;
+      &:hover{
+        background-color:#f3f3f3;
+      }
+      &:after{
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+      }
+    }
+    .item-left{
+      float:left;
+      span.item-info{
+        float:left;
+        margin-left:10px;
+        display:block;
+      }
+    }
+    .item-right{
+      float:right;
+      button{
+        margin-top:15px;
+      }
+    }
+  }
 }

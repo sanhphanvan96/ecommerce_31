@@ -11,13 +11,21 @@
     <div class="product-info">
       <h5><%= link_to product.name, product %></h5>
       <div class="product-price">
-        <span><b><%= t("product.price") %>: <%= product.price %></b></span>
-      </div>
-      <div class="cart-logo">
-        <i class="#"></i>
+        <span>
+          <b><%= number_to_currency product.price,
+            unit: t("product.price_unit"), format: "%n %u", precision: 0 %>
+          </b>
+        </span>
       </div>
       <div class="product-detail">
         <span><%= product.description %></span>
+      </div>
+      <div class="cart-logo">
+        <%= link_to cart_path(product), remote: true,
+          method: "put", class: "btn btn-success" do %>
+          <span class="glyphicon glyphicon-shopping-cart"></span>
+          <%= t "cart.btn-addtocart" %>
+        <% end %>
       </div>
     </div>
   </div>

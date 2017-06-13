@@ -1,0 +1,2 @@
+$('.cart-item').replaceWith('<%= escape_javascript render(partial: "layouts/cart") %>');
+$('.items-count').text('<%= @cart.count %>');

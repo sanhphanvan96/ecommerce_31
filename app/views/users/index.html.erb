@@ -1,7 +1,8 @@
-<% provide :title, @user.name %>
+<% provide :title, t("title.all_users") %>
+<h1><% t "title.all_users" %></h1>
 <div class=table-responsive >
   <table class="table table-bordered">
-    <thead>
+    <thead class="thead-inverse">
       <tr>
         <th class="center"><%= t "user.index" %></th>
         <th><%= t "user.name" %></th>
@@ -11,30 +12,34 @@
         <th><%= t "user.action" %></th>
       </tr>
     </thead>
+    <% @users.each do |user| %>
     <tbody>
-      <tr>
-        <td class="center"><%= @user.id %></td>
-        <td><%= @user.name %></td>
-        <td><%= @user.email %></td>
-        <td><%= @user.phone %></td>
-        <td><%= @user.address %></td>
+      <tr class="<%= cycle("even", "odd") -%>">
+        <td class="center"><%= user.id %></td>
+        <td><%= link_to user.name, user %></td>
+        <td><%= user.email %></td>
+        <td><%= user.phone %></td>
+        <td><%= user.address %></td>
         <td class="center user-action">
-          <%= link_to user_path(@user.id), class: "btn btn-light btn-xs" do %>
+          <%= link_to user_path(user), class: "btn btn-light btn-xs" do %>
             <i class="glyphicon glyphicon-info-sign"></i>
           <% end %>
-          <% if current_user.is_admin? || current_user?(@user) %>
-            <%= link_to @user, method: :delete,
+          <% if current_user.is_admin? && !current_user?(user) %>
+            <%= link_to user_path(user), method: :delete,
               data: {confirm: t("alert.confirm_delete")},
               class: "btn btn-light btn-xs" do %>
             <i class="glyphicon glyphicon-remove-sign"></i>
             <% end %>
           <% end %>
-          <% if current_user?(@user) %>
-            <%= link_to edit_user_path(@user), class: "btn btn-light btn-xs" do %>
+          <% if current_user?(user) %>
+            <%= link_to edit_user_path(user), class: "btn btn-light btn-xs" do %>
               <i class="glyphicon glyphicon-pencil"></i>
             <% end %>
           <% end %>
         </td>
       </tr>
+    </tbody>
+    <% end %>
   </table>
+  <div class="center"><%= will_paginate %></div>
 </div>

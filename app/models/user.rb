@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
 
   before_save downcase_email
-  validates :name, presense: true, length: {maximum: Settings.max_name}
+  validates :name, presence: true, length: {maximum: Settings.max_name}
   validates :email, presence: true, length: {maximum: Settings.max_email},
     format: {with: Settings.VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :phone, presence: true, length: {maximum: Settings.max_phone},

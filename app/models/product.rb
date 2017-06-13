@@ -4,7 +4,8 @@ class Product < ApplicationRecord
   has_many :categories, through: :product_categories
   validates :name, presence: true
   validates :price, presence: true
-
+  mount_uploader :image, PictureUploader
+  
   scope :search, -> name, category_id do
     search_by_name(name).
     search_by_category(category_id)

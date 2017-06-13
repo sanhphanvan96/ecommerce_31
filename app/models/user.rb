@@ -14,6 +14,14 @@ class User < ApplicationRecord
     format: {with: Settings.VALID_PHONE_REGEX}, allow_blank: true
   validates :address, length: {maximum: Settings.max_name}, allow_blank: true
   has_secure_password
+  validates :password, presence: true, length: {minimum: Settings.min_password},
+    allow_nil: true
+
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+      BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
 
   private
 

@@ -1,0 +1,42 @@
+<% provide :title, t("title.all_users") %>
+<h1><% t "title.all_users" %></h1>
+<div class=table-responsive >
+  <table class="table table-bordered">
+    <thead class="thead-inverse">
+      <tr>
+        <th class="center"><%= t "user.index" %></th>
+        <th><%= t "user.name" %></th>
+        <th><%= t "user.email" %></th>
+        <th><%= t "user.phone" %></th>
+        <th><%= t "user.address" %></th>
+        <th><%= t "user.action" %></th>
+      </tr>
+    </thead>
+    <% @users.each do |user| %>
+    <tbody>
+        <tr class="<%= cycle("even", "odd") -%>">
+          <td class="center"><%= user.id %></td>
+          <td><%= link_to "#{user.name}", get_user_by_id(user.id) %></td>
+          <td><%= user.email %></td>
+          <td><%= user.phone %></td>
+          <td><%= user.address %></td>
+          <td class="center user-action">
+            <%= link_to get_user_by_id(user.id) do %>
+              <i class="glyphicon glyphicon-info-sign"></i>
+            <% end %>
+            <%= link_to signup_path do %>
+              <i class="glyphicon glyphicon-remove-sign"></i>
+            <% end %>
+            <%= link_to signup_path do %>
+              <i class="glyphicon glyphicon-pencil"></i>
+            <% end %>
+          </td>
+        </tr>
+    </tbody>
+    <% end %>
+  </table>
+  <div class="center"><%= will_paginate %></div>
+</div>
+<%= link_to signup_path, class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-info-sign"></i>
+<% end %>

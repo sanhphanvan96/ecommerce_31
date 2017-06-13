@@ -19,13 +19,14 @@ vn:
   success:
     welcome: "Chào mừng đến với Ecommercy!"
   user:
-    index: "#"
+    index: "ID"
     name: "Tên"
     email: "Email"
     password: "Mật khẩu"
     password_confirmation: "Xác nhận"
     phone: "Số điện thoại"
     address: "Địa chỉ"
-    creat_account: "Tạo tài khoản"
   account:
     sign_up: "Đăng ký"
+    log_in: "Đăng nhập"
+    creat_account: "Tạo tài khoản"

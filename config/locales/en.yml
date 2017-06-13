@@ -1,2 +1,12 @@
 en:
-  home: "Ecommerce"
+  title:
+    default: "Ecommerce"
+    home: "Home"
+    about: "About"
+  static_pages:
+    home: "Home"
+    about: "About"
+  button:
+    sign_up: "Sign up now!"
+  developer: "Sanh Phan Van"
+  develop_title: "Develop by "

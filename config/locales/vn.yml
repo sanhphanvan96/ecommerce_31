@@ -1,2 +1,12 @@
 vn:
-  home: "Ecommerce"
+  title:
+    default: "Ecommerce"
+    home: "Trang chủ"
+    about: "Về chúng tôi"
+  static_pages:
+    home: "Trang chủ"
+    about: "Về chúng tôi"
+  button:
+    sign_up: "Đăng ký ngay!"
+  developer: "Sanh Phan Van"
+  develop_title: "Develop by "

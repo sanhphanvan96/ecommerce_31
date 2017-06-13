@@ -118,3 +118,19 @@ input {
 table tr.even {
     background-color: $gray-medium-light
 }
+
+.image-product {
+  img {
+    height: 80%;
+    width: 80%;
+  }
+}
+
+.product-view {
+  background-color: $gray-medium-light;
+  margin-top: 20px;
+}
+.product-info {
+  background-color: $gray-medium-light;
+  padding: 10px;
+}

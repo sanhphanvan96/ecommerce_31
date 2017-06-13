@@ -1,5 +1,5 @@
-VALID_EMAIL_REGEX: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-VALID_PHONE_REGEX: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{5})/
+VALID_EMAIL_REGEX: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+VALID_PHONE_REGEX: !ruby/regexp /\A0\d{9,10}/
 max_name: 50
 max_email: 255
 max_phone: 11

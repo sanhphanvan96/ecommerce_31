@@ -10,3 +10,22 @@ vn:
     sign_up: "Đăng ký ngay!"
   developer: "Sanh Phan Van"
   develop_title: "Develop by "
+  error:
+    form_content: "Form chứa "
+    errors: " lỗi"
+    user:
+      not_found: "Không tìm thấy user!"
+      no_permit: "Không đủ quyền để xem!"
+  success:
+    welcome: "Chào mừng đến với Ecommercy!"
+  user:
+    index: "#"
+    name: "Tên"
+    email: "Email"
+    password: "Mật khẩu"
+    password_confirmation: "Xác nhận"
+    phone: "Số điện thoại"
+    address: "Địa chỉ"
+    creat_account: "Tạo tài khoản"
+  account:
+    sign_up: "Đăng ký"

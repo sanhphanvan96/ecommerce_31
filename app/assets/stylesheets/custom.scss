@@ -14,7 +14,7 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 section {
@@ -117,4 +117,28 @@ input {
 
 table tr.even {
     background-color: $gray-medium-light
+}
+
+.padding-table {
+  padding: 20px;
+}
+
+.image-product {
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.product-view {
+  background-color: $gray-medium-light;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.product-info {
+  background-color: $gray-medium-light;
+  padding: 10px;
 }

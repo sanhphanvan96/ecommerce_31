@@ -7,6 +7,7 @@ en:
     sign_up: "Sign up"
     all_users: "All users"
     edit_user: "Edit user"
+    all_products: "All products"
   static_pages:
     home: "Home"
     about: "About"
@@ -22,6 +23,8 @@ en:
       no_permit: "Have no permit to see!"
       no_login: "Please log in."
       invalid_email_password: "Invalid email/password combination"
+    product:
+      not_found: "Not found product!"
   success:
     welcome: "Welcome to the Ecommercy!"
     profile_updated: "Profile updated!"
@@ -48,6 +51,12 @@ en:
     update_profile: "Update your profile"
     save_change: "Save changes"
     admin:
-      manager_user: "Manage users"
+      manage_user: "Manage Users"
+      manage_product: "Manage Products"
   alert:
     confirm_delete: "Are you sure?"
+  search: "Search"
+  img_alt:
+    product: "product-img"
+  product:
+    price: "USD"

@@ -1,0 +1,24 @@
+<div class="col-xs-6 col-sm-6 col-md-4 text-center">
+  <div class="product-view">
+    <div class="image-product hover">
+      <figure>
+        <a href="#">
+          <img alt="<%= t "img_alt.product" %>" src="<%= product.image %>" />
+        </a>
+      </figure>
+    </div>
+    <div class="product-info">
+      <h5><a class="product-name" href="#"><%= product.name %></a></h5>
+      <div class="product-price">
+        <span><%= number_to_currency product.price,
+          unit: t("product.price"), format: "%n %u", precision: 0 %></span>
+      </div>
+      <div class="cart-logo">
+        <i class="#"></i>
+      </div>
+      <div class="product-detail">
+        <span><%= product.description %></span>
+      </div>
+    </div>
+  </div>
+</div>

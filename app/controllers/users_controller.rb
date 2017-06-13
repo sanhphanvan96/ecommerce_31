@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   before_action :load_user, except: [:create, :index, :new]
 
   def index
-    @users = User.order_by_created_at.paginate(page: params[:page],
-      per_page: Settings.max_user_per_table)
+    @users = User.order_by_created_at.paginate page: params[:page],
+      per_page: Settings.max_user_per_table
   end
 
   def show

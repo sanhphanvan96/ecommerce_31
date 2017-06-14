@@ -10,3 +10,8 @@ vn:
     sign_up: "Đăng ký ngay!"
   developer: "Sanh Phan Van"
   develop_title: "Develop by "
+  header:
+    dropdown:
+      profile: "Hồ sơ"
+      setting: "Thiết đặt"
+      log_out: "Đăng xuất"

@@ -10,4 +10,12 @@ en:
     sign_up: "Sign up now!"
   developer: "Sanh Phan Van"
   develop_title: "Develop by "
-
+  header:
+    dropdown:
+      profile: "Profile"
+      setting: "Settings"
+      log_out: "Log out"
+    log_in: "Log in"
+    cart: "Cart"
+  product:
+    title: "Products"

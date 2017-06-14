@@ -1,32 +1,41 @@
 <% provide(:title, "All product") %>
 <h1>All products</h1>
-<div class="tab-pane" id="product">
-  <div class="list-product">
-    <div class="row">
-      <% @products.each do |product| %>
-      <div class="col-xs-6 col-sm-4 col-md-3 text-center">
-        <div class="product-view">
-        <div class="image-product">
-          <a href="#"><img alt="Product image" src="<%= product.image %>" /></a>
-        </div>
-        <div class="product-info">
-          <h5><a class="product-name" href="#"><%= product.name %></a></h5>
-          <div class="product-price">
-            <span>Price: <%= product.price %> VND</span>
-          </div>
-          <div class="cart-logo">
-            <i class="#"></i>
-          </div>
-          <div class="product-detail">
-            <span><%= product.description %></span>
-          </div>
-        </div>
-        </div>
+
+<div class="search-content-box">
+   <div class="container-search">
+      <div class="container">
+         <form action="#" method="GET" role="form">
+            <div class="row">
+               <div class="col-xs-12 col-sm-12 col-md-9">
+                  <input name="post_type" value="mon-an" type="hidden">
+                  <input class="form-control" value="" name="s" required="required" placeholder="Find..." type="text">
+               </div>
+               <div class="col-xs-12 col-sm-12 col-md-3">
+                  <select name="category" id="category" class="form-control">
+                     <option value="" selected="selected">Category</option>
+                     <option class="level-0" value="level-0">level-0</option>
+                     <option class="level-1" value="level-1">&nbsp;&nbsp;&nbsp;level-1</option>
+                     <option class="level-1" value="level-1">&nbsp;&nbsp;&nbsp;level-1</option>
+                     <option class="level-1" value="level-1">&nbsp;&nbsp;&nbsp;level-1</option>
+                     <option class="level-1" value="level-1">&nbsp;&nbsp;&nbsp;level-1</option>
+                     <option class="level-1" value="level-1">&nbsp;&nbsp;&nbsp;level-1</option>
+                     <option class="level-1" value="level-1">&nbsp;&nbsp;&nbsp;level-1</option>
+                     <option class="level-0" value="level-0">level-0</option>
+                     <option class="level-0" value="level-0">level-0</option>
+                     <option class="level-1" value="level-1">level-0</option>
+                     <option class="level-0" value="level-0">level-0</option>
+                     <option class="level-1" value="level-1">&nbsp;&nbsp;&nbsp;level-1</option>
+                     <option class="level-1" value="level-1">&nbsp;&nbsp;&nbsp;level-1</option>
+                     <option class="level-0" value="level-0">level-0</option>
+                     <option class="level-0" value="level-0">level-0</option>
+                  </select>
+                  <button type="submit">Search</button>
+               </div>
+            </div>
+         </form>
       </div>
-      <%end%>
-    </div>
-  </div>
+   </div>
 </div>
 
-<div class="center"><%= will_paginate %></div>
+<%= render "shared/products" %>
 

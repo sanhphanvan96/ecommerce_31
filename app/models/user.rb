@@ -14,9 +14,8 @@ class User < ApplicationRecord
     format: {with: Settings.VALID_PHONE_REGEX}, allow_blank: true
   validates :address, length: {maximum: Settings.max_name}, allow_blank: true
   has_secure_password
-  validates :password, presence: true, length: {minimum: Settings.min_password}
 
-  private:
+  private
 
   def downcase_email
     self.email = email.downcase

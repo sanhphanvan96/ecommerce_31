@@ -1,0 +1,20 @@
+<% provide :title, @user.name %>
+<div class=table-responsive >
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th><%= t "user.name" %></th>
+        <th><%= t "user.email" %></th>
+        <th><%= t "user.phone" %></th>
+        <th><%= t "user.address" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @user.name %></td>
+        <td><%= @user.email %></td>
+        <td><%= @user.phone %></td>
+        <td><%= @user.address %></td>
+      </tr>
+  </table>
+</div>

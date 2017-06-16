@@ -5,4 +5,4 @@ max_email: 255
 max_phone: 11
 min_password: 6
 max_user_per_table: 10
-max_product_per_pages: 16
+max_product_per_pages: 9

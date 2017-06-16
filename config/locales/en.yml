@@ -48,6 +48,7 @@ en:
     update_profile: "Update your profile"
     save_change: "Save changes"
     admin:
-      manager_user: "Manage users"
+      manage_user: "Manage Users"
+      manage_product: "Manage Products"
   alert:
     confirm_delete: "Are you sure?"

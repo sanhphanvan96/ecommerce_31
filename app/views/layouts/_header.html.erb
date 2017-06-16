@@ -19,10 +19,12 @@
               <li class="divider"></li>
               <% if current_user.is_admin? %>
                 <li>
-                  <%= link_to t("account.admin.manager_user"),
+                  <%= link_to t("account.admin.manage_user"),
                     users_path %>
-                  <li class="divider"></li>
+                  <%= link_to t("account.admin.manage_product"),
+                    products_path %>
                 </li>
+                <li class="divider"></li>
               <% end %>
               <li>
                 <%= link_to t("account.log_out"), logout_path, method: :delete %>

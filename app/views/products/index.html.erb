@@ -1,39 +1,9 @@
 <% provide(:title, "All product") %>
-<div class="search-content-box">
-   <div class="container-search">
-      <div class="container">
-         <form action="#" method="GET" role="form">
-            <div class="row">
-               <div class="col-xs-12 col-sm-12 col-md-9">
-                  <input name="post_type" value="mon-an" type="hidden">
-                  <input class="form-control" value="" name="s" required="required" placeholder="Find..." type="text">
-               </div>
-               <div class="col-xs-12 col-sm-12 col-md-3">
-                  <select name="category" id="category" class="form-control">
-                     <option value="" selected="selected">Category</option>
-                     <option class="level-0" value="level-0">level-0</option>
-                     <option class="level-1" value="level-1">&nbsp;&nbsp;&nbsp;level-1</option>
-                     <option class="level-1" value="level-1">&nbsp;&nbsp;&nbsp;level-1</option>
-                     <option class="level-1" value="level-1">&nbsp;&nbsp;&nbsp;level-1</option>
-                     <option class="level-1" value="level-1">&nbsp;&nbsp;&nbsp;level-1</option>
-                     <option class="level-1" value="level-1">&nbsp;&nbsp;&nbsp;level-1</option>
-                     <option class="level-1" value="level-1">&nbsp;&nbsp;&nbsp;level-1</option>
-                     <option class="level-0" value="level-0">level-0</option>
-                     <option class="level-0" value="level-0">level-0</option>
-                     <option class="level-1" value="level-1">level-0</option>
-                     <option class="level-0" value="level-0">level-0</option>
-                     <option class="level-1" value="level-1">&nbsp;&nbsp;&nbsp;level-1</option>
-                     <option class="level-1" value="level-1">&nbsp;&nbsp;&nbsp;level-1</option>
-                     <option class="level-0" value="level-0">level-0</option>
-                     <option class="level-0" value="level-0">level-0</option>
-                  </select>
-                  <button type="submit">Search</button>
-               </div>
-            </div>
-         </form>
-      </div>
-   </div>
-</div>
-
+<%= form_tag products_path, :method => "get" do %>
+      <p>
+      <%= text_field_tag :search %>
+      <%= submit_tag "search" %>
+       </p>
+<% end %>
 <%= render "shared/products" %>
 

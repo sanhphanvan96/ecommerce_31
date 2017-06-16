@@ -1,0 +1,41 @@
+<div>
+  <div class="row carousel-holder" style="margin-bottom: 25px;">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+            </ol>
+            <div class="carousel-inner carousel-item">
+              <div class="item">
+                <%= link_to image_tag("macbook.jpg", alt: "App logo", class: "slide-image"),'#' %>
+                <div class="carousel-caption d-none d-md-block">
+                  <p>Macbook 1</p>
+                </div>
+              </div>
+              <div class="item active">
+                <%= link_to image_tag("macbook.jpg", alt: "App logo", class: "slide-image"),'#' %>
+                <div class="carousel-caption d-none d-md-block">
+                  <p>Macbook 2</p>
+                </div>
+              </div>
+              <div class="item">
+                <%= link_to image_tag("macbook.jpg", alt: "App logo", class: "slide-image"),'#' %>
+                <div class="carousel-caption d-none d-md-block">
+                  <p>Macbook 3</p>
+                </div>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>

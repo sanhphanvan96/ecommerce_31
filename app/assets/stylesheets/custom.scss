@@ -121,16 +121,30 @@ table tr.even {
 
 .image-product {
   img {
-    height: 50%;
-    width: 50%;
+    height: 90%;
+    width: 90%;
   }
 }
 
 .product-view {
   background-color: $gray-medium-light;
   margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
+
 .product-info {
   background-color: $gray-medium-light;
   padding: 10px;
+}
+
+/* Opacity #1 */
+.hover figure img {
+  opacity: 1;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+.hover figure:hover img {
+  opacity: .5;
 }

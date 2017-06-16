@@ -6,7 +6,8 @@ class ProductsController < ApplicationController
   # Find By Id (For pagination, the 'where' statement result is Product ActiveRecord::Relationship )
   @products = @products.search(params[:search]) if params[:search].present?
   # Search using Keyword
-  @products = @products.paginate(:page => params[:page], :per_page => 10)
+  @products = @products.paginate(:page => params[:page],
+    :per_page => Settings.max_product_per_page)
   # Pagination
   end
 

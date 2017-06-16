@@ -1,9 +1,16 @@
 <% provide(:title, "All product") %>
-<%= form_tag products_path, :method => "get" do %>
+<div class="center">
+<%= render "products/trend" %>
+   <div>
+   <%= form_tag products_path, :method => "get" do %>
       <p>
       <%= text_field_tag :search %>
       <%= submit_tag "search" %>
-       </p>
-<% end %>
+      </p>
+   <% end %>
+   </div>
+</div>
+<div>
 <%= render "shared/products" %>
+</div>
 

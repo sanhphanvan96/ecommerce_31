@@ -16,7 +16,7 @@
     <tbody>
         <tr class="<%= cycle("even", "odd") -%>">
           <td class="center"><%= user.id %></td>
-          <td><%= link_to "#{user.name}", get_user_by_id(user.id) %></td>
+          <td><%= link_to user.name, user %></td>
           <td><%= user.email %></td>
           <td><%= user.phone %></td>
           <td><%= user.address %></td>

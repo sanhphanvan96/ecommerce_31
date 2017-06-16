@@ -121,8 +121,8 @@ table tr.even {
 
 .image-product {
   img {
-    height: 90%;
-    width: 90%;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -147,4 +147,15 @@ table tr.even {
 }
 .hover figure:hover img {
   opacity: .5;
+}
+
+/* div background */
+.image-bg-fluid-height {
+    text-align: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    background: url('http://lorempixel.com/g/1920/500/') no-repeat center center scroll;
+    padding: 100px 0;
 }

@@ -1,5 +1,5 @@
 User.create!(name: "Phan Van Sanh",
-  email: "sanhphanvan@gmail.com",
+  email: "sanhphanvan96@gmail.com",
   password: "123456",
   password_confirmation: "123456",
   phone: "0962388514",
@@ -38,3 +38,19 @@ end
     views: views,
     rating_id: rating_id)
 end
+
+Category.create!(
+  name: "Electronic",
+  description: "Electronic")
+Category.create!(parent_id: "1",
+  name: "Phone",
+  description: "Phone")
+Category.create!(parent_id: "1",
+  name: "Laptop",
+  description: "Electronic")
+Category.create!(
+  name: "Book",
+  description: "Book")
+Category.create!(parent_id: "2",
+  name: "Nokia",
+  description: "Nokia")

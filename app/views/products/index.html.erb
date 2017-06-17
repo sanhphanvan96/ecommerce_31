@@ -1,14 +1,14 @@
-<% provide(:title, "All product") %>
-<div class="center">
+<% provide :title, t("title.all_products") %>
 <%= render "products/trend" %>
-   <div>
-   <%= form_tag products_path, :method => "get" do %>
-      <p>
-      <%= text_field_tag :search %>
-      <%= submit_tag "search" %>
-      </p>
-   <% end %>
-   </div>
+<div class="col-sm-12 col-md-12">
+  <div class="col-sm-8 col-md-8">
+  <%= form_tag products_path, :method => "get" do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+  </div>
+  <div class="col-sm-4 col-md-4">
+    <%= submit_tag t("search") %>
+  </div>
+  <% end %>
 </div>
 <div>
 <%= render @products %>

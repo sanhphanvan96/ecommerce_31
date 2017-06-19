@@ -23,6 +23,8 @@ en:
       no_permit: "Have no permit to see!"
       no_login: "Please log in."
       invalid_email_password: "Invalid email/password combination"
+    product:
+      not_found: "Not found product!"
   success:
     welcome: "Welcome to the Ecommercy!"
     profile_updated: "Profile updated!"

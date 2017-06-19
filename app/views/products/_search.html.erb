@@ -1,0 +1,11 @@
+<div class="col-sm-6 col-md-6">
+<%= form_tag products_path, :method => "get" do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Posts", class: "search-box form-control" %>
+</div>
+<div class="col-sm-1 col-md-1">
+  <%= render :partial => "/categories/category"%>
+</div>
+<div class="col-sm-4 col-md-4">
+  <%= submit_tag t("search"), class: "btn btn-primary btn-search" %>
+</div>
+<% end %>

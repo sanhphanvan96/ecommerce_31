@@ -3,7 +3,7 @@
     <% if sub.subcategories.present? %>
       <li class="dropdown-submenu">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= sub.name %></a>
-       <%= render partial: "subcategory", locals: {subcategories: sub.subcategories}  %>
+       <%= render partial: "/categories/subcategory", locals: {subcategories: sub.subcategories}  %>
       </li>
     <%else%>
       <li>

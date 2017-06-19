@@ -1,16 +1,9 @@
 <% provide :title, t("title.all_products") %>
 <%= render "products/trend" %>
-<div class="col-sm-12 col-md-12">
-  <div class="col-sm-8 col-md-8">
-  <%= form_tag products_path, :method => "get" do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-  </div>
-  <div class="col-sm-4 col-md-4">
-    <%= submit_tag t("search") %>
-  </div>
-  <% end %>
+<div class="col-sm-12 col-md-12 search-block container">
+  <%= render "products/search" %>
 </div>
 <div>
-<%= render @products %>
-<div class="center"><%= will_paginate @products %></div>
+  <%= render @products %>
+  <div class="center"><%= will_paginate @products %></div>
 </div>

@@ -1,7 +1,10 @@
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle btn-category" type="button" data-toggle="dropdown">Category
-  <span class="caret"></span></button>
- <ul class="dropdown-menu">
+<ul class="nav navbar-nav">
+<li>
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    Product
+    <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
   <% @categories.each do |category| %>
     <% if category.parent_id.blank? %>
       <% if category.subcategories.present? %>
@@ -21,4 +24,5 @@
     <% end %>
   <% end %>
   </ul>
-</div>
+</li>
+</ul>

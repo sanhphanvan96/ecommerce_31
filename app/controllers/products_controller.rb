@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-  before_action :load_product, only: [:show, :new]
   def index
     @products = Product.all
     @products = @products.search(params[:search]) if params[:search].present?
@@ -17,10 +16,4 @@ class ProductsController < ApplicationController
 
   private
 
-  def load_product
-    @product = Product.find_by id: params[:id]
-    return if @product
-    flash[:danger] = t "error.product.not_found"
-    redirect_to root_path
-  end
 end

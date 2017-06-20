@@ -1,10 +1,19 @@
 class ProductsController < ApplicationController
+  before_action :verify_admin, except: :show
+  before_action :reset_cache
+  before_action :load_product, only: [:show, :new]
+
   def index
     @products = Product.all
-    @products = @products.search(params[:search]) if params[:search].present?
+    @products = Product.all.search_by_category(params[:search],
+      params[:category_id])
     @products = @products.paginate(:page => params[:page],
       :per_page => Settings.max_product_per_page)
-    @categories = Category.includes(:subcategories)
+    respond_to do |f|
+      f.html
+      f.json
+      f.js
+    end
   end
 
   def show
@@ -16,4 +25,7 @@ class ProductsController < ApplicationController
 
   private
 
+  def reset_cache
+    :reset_cache
+  end
 end

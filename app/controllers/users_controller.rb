@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, except: [:create, :show, :new]
+  before_action :logged_in_user, except: [:create, :new]
   before_action :correct_user, except: [:create, :index, :new]
   before_action :verify_admin, only: :index
   before_action :load_user, except: [:create, :index, :new]

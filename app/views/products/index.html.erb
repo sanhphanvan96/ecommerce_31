@@ -1,9 +1,41 @@
 <% provide :title, t("title.all_products") %>
-<%= render "products/trend" %>
-<div class="col-sm-12 col-md-12 search-block container">
-  <%= render "products/search" %>
+<div class="table-responsive container" >
+  <table class="table table-bordered">
+    <thead class="thead-inverse">
+      <tr>
+        <th class="center">
+          <%= t "product.index" %>
+        </th>
+        <th><%= t "product.image" %></th>
+        <th><%= t "product.name" %></th>
+        <th><%= t "product.description" %></th>
+        <th><%= t "product.price" %></th>
+        <th><%= t "product.category" %></th>
+        <th><%= t "product.action" %></th>
+      </tr>
+    </thead>
+    <% @products.each do |product| %>
+    <tbody>
+      <tr class="<%= cycle("even", "odd") -%>">
+        <td class="center"><%= product.id %></td>
+        <td><%= link_to image_tag("macbook.jpg", size: "90x60", alt: "App logo",
+            class: "slide-image"), product %></td>
+        <td><%= link_to product.name, product %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td><%= product.subcategory_id %></td>
+        <td class="center user-action">
+          <%= link_to product_path(product), class: "btn btn-light btn-xs" do %>
+            <i class="glyphicon glyphicon-info-sign"></i>
+          <% end %>
+            <i class="glyphicon glyphicon-remove-sign"></i>
+              <i class="glyphicon glyphicon-pencil"></i>
+        </td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+  <div class="center"><%= will_paginate %></div>
 </div>
-<div>
-  <%= render @products %>
-  <div class="center"><%= will_paginate @products %></div>
-</div>
+
+

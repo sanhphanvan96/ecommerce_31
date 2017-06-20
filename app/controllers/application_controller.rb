@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
   before_action :load_category
-  before_action :load_product, only: [:show, :new]
 
   def logged_in_user
     unless logged_in?
@@ -18,7 +17,15 @@ class ApplicationController < ActionController::Base
   end
 
   def verify_admin
-    redirect_to(root_url) unless current_user.is_admin?
+    if logged_in?
+      if !current_user.is_admin
+        flash[:danger] = t "error.user.no_permit"
+        redirect_to root_path
+      end
+    else
+      flash[:danger] = t "error.user.no_login"
+      redirect_to root_path
+    end
   end
 
   private

@@ -1,5 +1,8 @@
 <%= render "products/trend" %>
-<div>
+<div class="col-sm-12 col-md-12 search-block container">
+  <%= render "products/search" %>
+</div>
+<div id="list-products">
   <%= render @products %>
-  <div class="center"><%= will_paginate @products %></div>
+  <div class="col-sm-12 col-md-12 center"><%= will_paginate @products %></div>
 </div>

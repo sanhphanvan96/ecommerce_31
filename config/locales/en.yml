@@ -56,3 +56,11 @@ en:
   alert:
     confirm_delete: "Are you sure?"
   search: "Search"
+  product:
+    index: "ID"
+    name: "Name"
+    image: "Thumbnail"
+    description: "Description"
+    price: "Price"
+    category: "Category"
+    action: "Action"

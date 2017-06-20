@@ -10,13 +10,14 @@
   </head>
   <body>
     <%= render "layouts/header" %>
+    <%= params.inspect %>
     <div>
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>" style="margin-bottom: 0px;"><%= message %></div>
       <% end %>
     </div>
       <%= yield %>
-    <div>
+    <div class="col-sm-12 col-md-12">
       <br>
       <%= render "layouts/footer" %>
     </div>

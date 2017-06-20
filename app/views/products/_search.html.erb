@@ -1,13 +1,14 @@
 <div class="col-sm-6 col-md-6">
-<%= form_tag products_path, :method => "get" do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Posts", class: "search-box form-control" %>
-<% end %>
+  <%= form_tag products_path, method: :get, remote: true do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Posts",
+      class: "form-control" %>
 </div>
-<!--  <p style="text-align:center;"> -->
 <div  class="col-sm-2 col-md-2">
-  <%= render partial: "/categories/select-menu"%>
+    <%= select_tag :category_id,
+      options_for_select(Category.main_product.collect{|t| [t.name, t.id]}.insert(0, "All categories")), class: "form-control" %>
 </div>
 
 <div class="col-sm-1 col-md-1">
-  <%= submit_tag t("search"), class: "btn btn-primary btn-search" %>
+    <%= submit_tag t("search"), class: "btn btn-primary btn-md" %>
+  <% end %>
 </div>

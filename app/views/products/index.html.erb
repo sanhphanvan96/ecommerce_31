@@ -23,7 +23,7 @@
         <td><%= link_to product.name, product %></td>
         <td><%= product.description %></td>
         <td><%= product.price %></td>
-        <td><%= product.subcategory_id %></td>
+        <td><%= product.category_name %></td>
         <td class="center user-action">
           <%= link_to product_path(product), class: "btn btn-light btn-xs" do %>
             <i class="glyphicon glyphicon-info-sign"></i>
@@ -35,7 +35,7 @@
     </tbody>
     <% end %>
   </table>
-  <div class="center"><%= will_paginate %></div>
+
 </div>
 
 

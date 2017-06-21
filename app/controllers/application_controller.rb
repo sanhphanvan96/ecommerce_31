@@ -28,8 +28,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  private
-
   def load_category
     @categories = Category.includes(:subcategories)
   end
@@ -39,5 +37,9 @@ class ApplicationController < ActionController::Base
     return if @product
     flash[:danger] = t "error.product.not_found"
     redirect_to root_path
+  end
+
+  def reset_cache
+    :reset_cache
   end
 end

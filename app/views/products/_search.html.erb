@@ -4,8 +4,8 @@
       class: "form-control" %>
 </div>
 <div  class="col-sm-2 col-md-2">
-    <%= select_tag :category_id,
-      options_for_select(Category.main_product.collect{|t| [t.name, t.id]}.insert(0, "All categories")), class: "form-control" %>
+  <%= select_tag :category_id,
+    options_for_select(Category.main_categories.collect{|t| [t.name, t.id]}.insert(0, "All categories")), class: "form-control" %>
 </div>
 
 <div class="col-sm-1 col-md-1">

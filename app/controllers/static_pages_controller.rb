@@ -5,8 +5,8 @@ class StaticPagesController < ApplicationController
     @products = Product.all
     @products = Product.all.search_by_category(params[:search],
       params[:category_id])
-    @products = @products.paginate(:page => params[:page],
-      :per_page => Settings.max_product_per_page)
+    @products = @products.paginate(page: params[:page],
+      per_page: Settings.max_product_per_page)
     respond_to do |f|
       f.html
       f.json

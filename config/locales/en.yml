@@ -8,11 +8,13 @@ en:
     all_users: "All users"
     edit_user: "Edit user"
     all_products: "All products"
+    edit_product: "Edit product"
   static_pages:
     home: "Home"
     about: "About"
   button:
     sign_up: "Sign up now!"
+    save_change: "Save changes"
   developer: "Sanh Phan Van"
   develop_title: "Develop by "
   error:
@@ -29,6 +31,8 @@ en:
     welcome: "Welcome to the Ecommercy!"
     profile_updated: "Profile updated!"
     user_deleted: "User deleted!"
+    product_updated: "Product updated!"
+    product_deleted: "Product deleted!"
   user:
     index: "ID"
     name: "Name"
@@ -59,8 +63,10 @@ en:
   product:
     index: "ID"
     name: "Name"
-    image: "Thumbnail"
+    image: "Image"
     description: "Description"
     price: "Price"
     category: "Category"
     action: "Action"
+    update_product: "Update product"
+    category: "Category"

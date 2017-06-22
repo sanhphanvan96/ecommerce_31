@@ -1,0 +1,21 @@
+<%= form_for @product do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :name, t("product.name") %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :price, t("product.price") %>
+  <%= f.text_field :price, class: "form-control" %>
+
+  <%= f.label :description, t("product.description") %>
+  <%= f.text_area :description, class: "form-control" %>
+
+  <%= f.label :image, t("product.image") %>
+  <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+
+  <%= f.label :category, t("product.category") %>
+  <%= f.collection_select(:subcategory_id, Category.sub_categories,
+    :id, :name, prompt: true) %>
+
+  <%= f.submit t("button.save_change"), class: "btn btn-primary" %>
+<% end %>

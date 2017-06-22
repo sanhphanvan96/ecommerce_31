@@ -5,5 +5,6 @@ class Category < ApplicationRecord
   has_one :parent, :class_name => "Category", :primary_key => :parent_id,
    :foreign_key => :id
 
-  scope :main_product, -> {where(parent_id: nil)}
+  scope :main_categories, -> {where(parent_id: nil)}
+  scope :sub_categories, -> {where.not(parent_id: nil)}
 end

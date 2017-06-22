@@ -1,5 +1,5 @@
 <% provide :title, t("title.all_products") %>
-<div class="table-responsive container" >
+<div class="table-responsive container away-header" >
   <table class="table table-bordered">
     <thead class="thead-inverse">
       <tr>
@@ -18,24 +18,28 @@
     <tbody>
       <tr class="<%= cycle("even", "odd") -%>">
         <td class="center"><%= product.id %></td>
-        <td><%= link_to image_tag("macbook.jpg", size: "90x60", alt: "App logo",
-            class: "slide-image"), product %></td>
+        <td><%= link_to image_tag(product.image.url, size: "90x60"),
+          product if product.image? %></td>
         <td><%= link_to product.name, product %></td>
         <td><%= product.description %></td>
         <td><%= product.price %></td>
         <td><%= product.category_name %></td>
         <td class="center user-action">
-          <%= link_to product_path(product), class: "btn btn-light btn-xs" do %>
-            <i class="glyphicon glyphicon-info-sign"></i>
+          <%= link_to edit_product_path(product),
+            class: "btn btn-light btn-xs" do %>
+            <i class="glyphicon glyphicon-pencil"></i>
           <% end %>
+          <%= link_to product_path(product), method: :delete,
+              data: {confirm: t("alert.confirm_delete")},
+              class: "btn btn-light btn-xs" do %>
             <i class="glyphicon glyphicon-remove-sign"></i>
-              <i class="glyphicon glyphicon-pencil"></i>
+          <% end %>
         </td>
       </tr>
     </tbody>
     <% end %>
   </table>
-
+  <div class="center"><%= will_paginate %></div>
 </div>
 
 

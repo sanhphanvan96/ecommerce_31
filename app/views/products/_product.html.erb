@@ -5,13 +5,13 @@
         <a href="#">
 <!--      <img alt="Product image" src="<%= product.image %>" /></a> -->
           <%= link_to image_tag("macbook.jpg", alt: "App logo",
-            class: "slide-image"),'#' %>
+            class: "img-rounded"), product %>
       </figure>
     </div>
     <div class="product-info">
-      <h5><a class="product-name" href="#"><%= product.name %></a></h5>
+      <h5><%= link_to product.name, product %></h5>
       <div class="product-price">
-        <span>Price: <%= product.price %> VND</span>
+        <span><b><%= t("product.price") %>: <%= product.price %></b></span>
       </div>
       <div class="cart-logo">
         <i class="#"></i>

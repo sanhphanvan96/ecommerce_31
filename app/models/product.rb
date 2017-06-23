@@ -4,7 +4,6 @@ class Product < ApplicationRecord
   has_many :categories, through: :product_categories
   validates :name, presence: true
   validates :price, presence: true
-  validates :subcategory_id, presence: true
   mount_uploader :image, PictureUploader
   accepts_nested_attributes_for :product_categories
 

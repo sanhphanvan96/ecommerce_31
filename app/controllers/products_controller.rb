@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :verify_admin, except: :show
   before_action :reset_cache
-  before_action :load_product, except: [:create, :index]
+  before_action :load_product, except: [:create, :index, :new]
 
   def index
     @products = Product.join_category.paginate(page: params[:page],
@@ -13,6 +13,16 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+  end
+
+  def create
+    @product = Product.new product_params
+    if @product.save
+      flash[:success] = t "success.product_created"
+      redirect_to @product
+    else
+      render :new
+    end
   end
 
   def update

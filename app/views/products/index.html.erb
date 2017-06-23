@@ -1,4 +1,7 @@
 <% provide :title, t("title.all_products") %>
+<div class="container away-header">
+  <%= link_to t("button.new_product"), new_product_path, class: "btn btn-primary" %>
+</div>
 <div class="table-responsive container away-header" >
   <table class="table table-bordered">
     <thead class="thead-inverse">

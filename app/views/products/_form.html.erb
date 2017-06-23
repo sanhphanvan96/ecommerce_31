@@ -17,5 +17,5 @@
   <%= f.collection_select(:subcategory_id, Category.sub_categories,
     :id, :name, prompt: true) %>
 
-  <%= f.submit t("button.save_change"), class: "btn btn-primary" %>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

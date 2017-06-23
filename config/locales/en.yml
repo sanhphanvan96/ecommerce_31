@@ -9,12 +9,14 @@ en:
     edit_user: "Edit user"
     all_products: "All products"
     edit_product: "Edit product"
+    new_product: "New product"
   static_pages:
     home: "Home"
     about: "About"
   button:
     sign_up: "Sign up now!"
     save_change: "Save changes"
+    new_product: "New product"
   developer: "Sanh Phan Van"
   develop_title: "Develop by "
   error:
@@ -33,6 +35,7 @@ en:
     user_deleted: "User deleted!"
     product_updated: "Product updated!"
     product_deleted: "Product deleted!"
+    product_created: "Product created!"
   user:
     index: "ID"
     name: "Name"

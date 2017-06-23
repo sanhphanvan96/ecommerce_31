@@ -18,7 +18,7 @@ class User < ApplicationRecord
     allow_nil: true
   scope :order_by_created_at, ->{order created_at: :desc}
 
-  def User.digest(string)
+  def User.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
       BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)

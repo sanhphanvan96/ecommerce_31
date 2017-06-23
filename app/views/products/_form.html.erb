@@ -14,8 +14,11 @@
   <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
 
   <%= f.label :category, t("product.category") %>
-  <%= f.collection_select(:subcategory_id, Category.sub_categories,
-    :id, :name, prompt: true) %>
+
+  <%= f.fields_for :product_categories do |result| %>
+    <%= result.collection_select(:category_id, Category.sub_categories,
+      :id, :name, prompt: true) %>
+  <% end %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

@@ -10,6 +10,7 @@ en:
     all_products: "All products"
     edit_product: "Edit product"
     new_product: "New product"
+    new_category: "New category"
   static_pages:
     home: "Home"
     about: "About"
@@ -17,6 +18,7 @@ en:
     sign_up: "Sign up now!"
     save_change: "Save changes"
     new_product: "New product"
+    new_category: "New category"
   developer: "Sanh Phan Van"
   develop_title: "Develop by "
   error:
@@ -70,7 +72,13 @@ en:
     description: "Description"
     price: "Price"
     category: "Category"
+    parent_category: "Parent category"
     action: "Action"
     update_product: "Update product"
     category: "Category"
     all_categories: "All categories"
+  category:
+    name: "Name"
+    description: "Description"
+    parent_category: "Parent category"
+    review_categories: "Review categories"

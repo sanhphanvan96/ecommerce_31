@@ -1,48 +1,70 @@
 <% provide :title, t("title.all_products") %>
 <div class="container away-header">
-  <%= link_to t("button.new_product"), new_product_path, class: "btn btn-primary" %>
-</div>
-<div class="table-responsive container away-header" >
-  <table class="table table-bordered">
-    <thead class="thead-inverse">
-      <tr>
-        <th class="center">
-          <%= t "product.index" %>
-        </th>
-        <th><%= t "product.image" %></th>
-        <th><%= t "product.name" %></th>
-        <th><%= t "product.description" %></th>
-        <th><%= t "product.price" %></th>
-        <th><%= t "product.category" %></th>
-        <th><%= t "product.action" %></th>
-      </tr>
-    </thead>
-    <% @products.each do |product| %>
-    <tbody>
-      <tr class="<%= cycle("even", "odd") -%>">
-        <td class="center"><%= product.id %></td>
-        <td><%= link_to image_tag(product.image.url, size: "90x60"),
-          product if product.image? %></td>
-        <td><%= link_to product.name, product %></td>
-        <td><%= product.description %></td>
-        <td><%= product.price %></td>
-        <td><%= product.category_name %></td>
-        <td class="center user-action">
-          <%= link_to edit_product_path(product),
-            class: "btn btn-light btn-xs" do %>
-            <i class="glyphicon glyphicon-pencil"></i>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#products">Manage Products</a></li>
+    <li><a data-toggle="tab" href="#categories">Manage Categories</a></li>
+  </ul>
+  <div class="tab-content">
+    <div id="products" class="tab-pane fade in active">
+      <div class="container away-header">
+        <%= link_to t("button.new_product"), new_product_path,
+          class: "btn btn-primary" %>
+      </div>
+      <div class="table-responsive container away-header" >
+        <table class="table table-bordered">
+          <thead class="thead-inverse">
+            <tr>
+              <th class="center">
+                <%= t "product.index" %>
+              </th>
+              <th><%= t "product.image" %></th>
+              <th><%= t "product.name" %></th>
+              <th><%= t "product.description" %></th>
+              <th><%= t "product.price" %></th>
+              <th><%= t "product.category" %></th>
+              <th><%= t "product.action" %></th>
+            </tr>
+          </thead>
+          <% @products.each do |product| %>
+          <tbody>
+            <tr class="<%= cycle("even", "odd") -%>">
+              <td class="center"><%= product.id %></td>
+              <td><%= link_to image_tag(product.image.url, size: "90x60"),
+                product if product.image? %></td>
+              <td><%= link_to product.name, product %></td>
+              <td><%= product.description %></td>
+              <td><%= product.price %></td>
+              <td><%= product.category_name %></td>
+              <td class="center user-action">
+                <%= link_to edit_product_path(product),
+                  class: "btn btn-light btn-xs" do %>
+                  <i class="glyphicon glyphicon-pencil"></i>
+                <% end %>
+                <%= link_to product_path(product), method: :delete,
+                    data: {confirm: t("alert.confirm_delete")},
+                    class: "btn btn-light btn-xs" do %>
+                  <i class="glyphicon glyphicon-remove-sign"></i>
+                <% end %>
+              </td>
+            </tr>
+          </tbody>
           <% end %>
-          <%= link_to product_path(product), method: :delete,
-              data: {confirm: t("alert.confirm_delete")},
-              class: "btn btn-light btn-xs" do %>
-            <i class="glyphicon glyphicon-remove-sign"></i>
-          <% end %>
-        </td>
-      </tr>
-    </tbody>
-    <% end %>
-  </table>
-  <div class="center"><%= will_paginate %></div>
-</div>
+        </table>
+        <div class="center"><%= will_paginate %></div>
+      </div>
+    </div>
 
+    <div id="categories" class="tab-pane fade">
+      <div class="container away-header">
+        <div>
+          <%= link_to t("button.new_category"), new_category_path,
+            class: "btn btn-primary" %>
+        </div>
+        <div>
+          <%= render partial: "/categories/category"%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 

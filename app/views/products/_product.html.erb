@@ -13,11 +13,15 @@
       <div class="product-price">
         <span><b><%= t("product.price") %>: <%= product.price %></b></span>
       </div>
-      <div class="cart-logo">
-        <i class="#"></i>
-      </div>
       <div class="product-detail">
         <span><%= product.description %></span>
+      </div>
+      <div class="cart-logo">
+        <%= link_to cart_path(product), remote: true,
+          method: "PUT", class: "btn btn-success" do %>
+          <span class="glyphicon glyphicon-shopping-cart"></span>
+          <%= t "button.cart" %>
+        <% end %>
       </div>
     </div>
   </div>

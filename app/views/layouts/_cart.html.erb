@@ -1,0 +1,38 @@
+<div class="cart-item">
+    <li id="item-item.product_id">
+      <span class="item">
+        <span class="item-left">
+        </span>
+        <span class="item-left item-infor">
+          <table class="table">
+            <thead>
+              <tr>
+                <th><%= t ".quantity" %></th>
+                <th><%= t ".price" %></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span>item.quantity</span></td>
+                <td><span>number_to_currency item.total_price</span></td>
+                <td>
+                <%= link_to t(".add"), cart_path(1),
+                  remote: true, method: "PUT",
+                  class: "pull-right btn btn-xs btn-primary" %>
+                <%= link_to t(".add"), cart_path(1),
+                  remote: true, method: "PUT",
+                  class: "pull-right btn btn-xs btn-primary" %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </span>
+        <span class="item-right">
+          <%= link_to t("delete"), cart_path(1),
+            method: :delete, remote: true,
+            class: "btn btn-xs btn-danger pull-right" %>
+        </span>
+      </span>
+    </li>
+</div>

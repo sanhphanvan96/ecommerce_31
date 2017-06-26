@@ -15,7 +15,7 @@ class CartItem
   end
 
   def product
-    Product.find product_id
+    Product.find_by id: product_id
   end
 
   def total_price

@@ -44,7 +44,7 @@
             role="button" aria-expanded="false">
             <span class="glyphicon glyphicon-shopping-cart"></span>
             <%= t "Items" %>
-            (<span class="items-count">cart.count</span>)
+            (<span class="items-count"><%= @cart.count %></span>)
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu dropdown-cart" role="menu">

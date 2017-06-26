@@ -18,9 +18,9 @@
       </div>
       <div class="cart-logo">
         <%= link_to cart_path(product), remote: true,
-          method: "PUT", class: "btn btn-success" do %>
+          method: "put", class: "btn btn-success" do %>
           <span class="glyphicon glyphicon-shopping-cart"></span>
-          <%= t "button.cart" %>
+          <%= t "cart.btn-viewcart" %>
         <% end %>
       </div>
     </div>

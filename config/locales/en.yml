@@ -38,6 +38,7 @@ en:
     product_updated: "Product updated!"
     product_deleted: "Product deleted!"
     product_created: "Product created!"
+    order_created: "Order complete!"
   user:
     index: "ID"
     name: "Name"
@@ -88,3 +89,14 @@ en:
     btn-delete: "x"
     btn-viewcart: "View Cart"
     btn-addtocart: "Add to Cart"
+  order:
+    index: "Index"
+    total: "Total"
+    address: "Address"
+    product_name: "Product Name"
+    quantity: "Quantity"
+    price: "Price"
+    confirm: "Are you sure?"
+    status:
+      pending: "Status: Pending"
+      done: "Status: Done"

@@ -1,0 +1,21 @@
+<div class="container away-header">
+  <% if @cart.present? %>
+    <div class="container">
+      <div class="row">
+        <%= render "order_items", order_items: @cart.items %>
+        <div class="pull-right">
+          <h4><b><%= t "order.total" %>: </b>
+            <%= number_to_currency @cart.total_price %></h4>
+        </div>
+      </div>
+      <div class="col-md-6 col-md-offset-3">
+      <%= form_for @order do |f| %>
+        <%= f.label :infor, t("order.address") %>
+        <%= f.text_field :infor, class: "form-control", value: current_user.address %>
+
+        <%= f.submit data: {confirm: t("order.confirm")}, class: "btn btn-primary" %>
+      <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -47,4 +47,11 @@ class ApplicationController < ActionController::Base
   def initialize_cart
     @cart = Cart.build_from_hash session
   end
+
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+    flash[:danger] = t "error.user.not_found"
+    redirect_to root_path
+  end
 end

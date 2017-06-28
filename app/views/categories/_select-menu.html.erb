@@ -1,9 +1,0 @@
-<select style="height: 33px; width: 150px;">
-    <option value="">All Categories</option>
-    <% @categories.each do |category| %>
-      <% if category.subcategories.present? %>
-        <option value=""><%= category.name %></option>
-        <%= render partial: "/categories/subcategory", locals: {subcategories: category.subcategories} %>
-        <% end %>
-    <% end %>
-</select>

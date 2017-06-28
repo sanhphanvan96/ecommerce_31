@@ -1,0 +1,14 @@
+<ul class="dropdown-menu">
+  <% subcategories.each do |sub| %>
+    <% if sub.subcategories.present? %>
+      <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= sub.name %></a>
+       <%= render partial: "/categories/subcategory", locals: {subcategories: sub.subcategories}  %>
+      </li>
+    <% else %>
+      <li>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= sub.name %></a>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

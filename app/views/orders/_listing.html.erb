@@ -12,8 +12,17 @@
   </div>
   <div class="panel-body">
     <%= render "order_items", order_items: order.order_details %>
-    <div class="pull-right">
-      <h4><b><%= t "order.total" %>: </b><%= number_to_currency order.total_payment %></h4>
+    <div>
+      <span class="pull-left">
+        <b><%= t "order.address" %> : </b>
+          <%= order.infor %>
+      </span>
+      <span class="pull-right">
+          <b><%= t "order.total" %>:</b>
+          <%= number_to_currency order.total_payment %>
+      </span>
     </div>
+  </div>
+  <div class="panel-body">
   </div>
 </div>

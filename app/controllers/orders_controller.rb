@@ -1,11 +1,11 @@
 class OrdersController < ApplicationController
   before_action :logged_in_user
-  before_action :verify_admin, only: :index
   before_action :load_user, except: [:create, :index, :new]
   before_action :load_product, only: [:show]
 
   def index
-    @orders = current_user.orders
+    @orders = current_user.orders.paginate page: params[:page],
+      per_page: Settings.max_product_order_per_page
   end
 
   def new
@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
     if @cart.present?
       @order = Order.new order_params
       if @order.save
-        # OrderMail.index(@order, current_user).deliver
+        # OrderMail
         session.delete("cart")
         flash[:success] = t "success.order_created"
         redirect_to order_path @order

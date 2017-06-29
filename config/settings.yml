@@ -7,3 +7,4 @@ min_password: 6
 max_user_per_table: 10
 max_product_per_page: 9
 max_product_per_table: 10
+max_product_order_per_page: 2

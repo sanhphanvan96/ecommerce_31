@@ -2,10 +2,11 @@ class ProductsController < ApplicationController
   before_action :verify_admin, except: :show
   before_action :reset_cache
   before_action :load_product, except: [:create, :index, :new]
+  before_action :load_category
 
   def index
-    @products = Product.join_category.paginate(page: params[:page],
-      per_page: Settings.max_product_per_table)
+    @products = Product.join_category.paginate page: params[:page],
+      per_page: Settings.max_product_per_table
   end
 
   def show

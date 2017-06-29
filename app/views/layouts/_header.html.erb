@@ -46,12 +46,9 @@
           </a>
           <ul class="dropdown-menu dropdown-cart" role="menu">
             <%= render "layouts/cart" %>
-            <li class="divider"></li>
-            <li>
-              <%= link_to t("button.create_order"), new_order_path, class: "text-center" %>
-            </li>
           </ul>
         </li>
+        <li><%= link_to t("order.orders_history"), orders_path %></li>
       </ul>
     </nav>
   </div>

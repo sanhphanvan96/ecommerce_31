@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :logged_in_user
   before_action :load_user, except: [:create, :index, :new]
   before_action :load_product, only: [:show]
+  before_action :load_cart, only: [:new, :create]
 
   def index
     @orders = current_user.orders.paginate page: params[:page],
@@ -17,18 +18,14 @@ class OrdersController < ApplicationController
   end
 
   def create
-    if @cart.present?
-      @order = Order.new order_params
-      if @order.save
-        # OrderMail
-        session.delete("cart")
-        flash[:success] = t "success.order_created"
-        redirect_to order_path @order
-      else
-        redirect_to new_order_path
-      end
+    @order = Order.new order_params
+    if @order.save
+      # OrderMail
+      session.delete("cart")
+      flash[:success] = t "success.order_created"
+      redirect_to order_path @order
     else
-      redirect_to root_path
+      redirect_to new_order_path
     end
   end
 

@@ -19,6 +19,7 @@ en:
     save_change: "Save changes"
     new_product: "New product"
     new_category: "New category"
+    create_order: "Order now!"
   developer: "Sanh Phan Van"
   develop_title: "Develop by "
   error:
@@ -31,6 +32,8 @@ en:
       invalid_email_password: "Invalid email/password combination"
     product:
       not_found: "Not found product!"
+    order:
+      cart_empty: "Please add some products to your cart!"
   success:
     welcome: "Welcome to the Ecommercy!"
     profile_updated: "Profile updated!"
@@ -89,6 +92,8 @@ en:
     btn-delete: "x"
     btn-viewcart: "View Cart"
     btn-addtocart: "Add to Cart"
+    empty: "Your cart is empty"
+    total: "Total"
   order:
     index: "Index"
     total: "Total"

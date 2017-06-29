@@ -39,6 +39,13 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
+  def load_cart
+    if @cart.blank?
+      flash[:danger] = t "error.order.cart_empty"
+      redirect_to root_path
+    end
+  end
+  
   def reset_cache
     :reset_cache
   end

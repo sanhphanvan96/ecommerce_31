@@ -22,6 +22,7 @@ gem "mini_magick",             "4.5.1"
 gem "fog",                     "1.38.0"
 gem "faker",                   "1.6.6"
 gem "config"
+gem "figaro"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

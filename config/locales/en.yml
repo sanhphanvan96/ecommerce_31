@@ -41,7 +41,7 @@ en:
     product_updated: "Product updated!"
     product_deleted: "Product deleted!"
     product_created: "Product created!"
-    order_created: "Order complete!"
+    order_created: "Order complete. Please check your email to confirm order"
   user:
     index: "ID"
     name: "Name"
@@ -105,3 +105,6 @@ en:
     status:
       pending: "Status: Pending"
       done: "Status: Done"
+  order_mailer:
+    confirm_order:
+      subject: "[Ecommerce 31] - Confirm order"

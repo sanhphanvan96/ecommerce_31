@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new order_params
     if @order.save
-      # OrderMail
+      OrderMailer.confirm_order(@order, current_user).deliver
       session.delete("cart")
       flash[:success] = t "success.order_created"
       redirect_to order_path @order

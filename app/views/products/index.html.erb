@@ -1,1 +1,20 @@
 <% provide :title, t("title.all_products") %>
+<div class="table-responsive container away-header" >
+  <table class="table table-bordered">
+    <thead class="thead-inverse">
+      <tr>
+        <th class="center">
+          <%= t "product.index" %>
+        </th>
+        <th><%= t "product.image" %></th>
+        <th><%= t "product.name" %></th>
+        <th><%= t "product.description" %></th>
+        <th><%= t "product.price" %></th>
+        <th><%= t "product.category" %></th>
+        <th><%= t "product.action" %></th>
+      </tr>
+    </thead>
+    <%= render partial: "line-product", object: @products %>
+  </table>
+  <div class="center"><%= will_paginate %></div>
+</div>

@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
-  before_action :load_category
 
   def logged_in_user
     unless logged_in?
@@ -18,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   def verify_admin
     if logged_in?
-      if !current_user.is_admin
+      if !current_user.is_admin?
         flash[:danger] = t "error.user.no_permit"
         redirect_to root_path
       end
@@ -41,5 +40,12 @@ class ApplicationController < ActionController::Base
 
   def reset_cache
     :reset_cache
+  end
+  
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+    flash[:danger] = t "error.user.not_found"
+    redirect_to root_path
   end
 end

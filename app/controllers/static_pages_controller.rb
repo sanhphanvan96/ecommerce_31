@@ -2,8 +2,7 @@ class StaticPagesController < ApplicationController
   before_action :reset_cache
 
   def home
-    @products = Product.all
-    @products = Product.all.search_by_category(params[:search],
+    @products = Product.all.search(params[:search],
       params[:category_id])
     @products = @products.paginate(page: params[:page],
       per_page: Settings.max_product_per_page)

@@ -7,26 +7,20 @@ class Product < ApplicationRecord
   mount_uploader :image, PictureUploader
   accepts_nested_attributes_for :product_categories
 
-  scope :search_by_category, -> name, category_id {
-    if name.present?
-      if category_id.present?
-        where(["name LIKE ? AND subcategory_id LIKE ?", "%#{name}%", "%#{category_id}%"])
-      else
-        where(["name LIKE ?", "%#{name}%"])
-      end
-    else
-      if category_id.present?
-        where(["subcategory_id LIKE ?", "%#{category_id}%"])
-      else
-        where(["name LIKE ?", "%#{name}%"])
-      end
-    end
-  }
-
+  scope :search, -> name, category_id do
+    search_by_name(name).
+    search_by_category(category_id)
+  end
+  scope :search_by_name, ->name do
+    where(["name LIKE ?", "%#{name}%"]) if name.present?
+  end
+  scope :search_by_category, ->category_id do
+    where(["subcategory_id LIKE ?", "%#{category_id}%"]) if category_id.present?
+  end
   scope :order_by_created_at, ->{order created_at: :desc}
-  scope :join_category, ->{
+  scope :join_category, -> do
     joins(:categories).
     select("products.*, categories.name AS category_name").
     order_by_created_at
-  }
+  end
 end

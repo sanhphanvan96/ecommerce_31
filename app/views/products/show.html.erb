@@ -6,7 +6,8 @@
       <div class="panel-heading"><b><%= @product.name %></b></div>
       <div class="panel-body product-info">
         <div>
-        <%= image_tag @product.image.url, size: "600x350", class: "img-responsive img-rounded" if @product.image? %>
+        <%= image_tag @product.image.url,
+          class: "img-responsive img-rounded img-pd-md" if @product.image? %>
         </div>
         <div class="product-info">
         <b><%= t("product.price") %>: <%= @product.price %></b>

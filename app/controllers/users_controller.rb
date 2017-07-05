@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :load_user, except: [:create, :index, :new]
 
   def index
-    @users = User.all.paginate(page: params[:page],
+    @users = User.order_by_created_at.paginate(page: params[:page],
       per_page: Settings.max_user_per_table)
   end
 
@@ -53,12 +53,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation, :phone, :address
-  end
-
-  def load_user
-    @user = User.find_by id: params[:id]
-    return if @user
-    flash[:danger] = t "error.user.not_found"
-    redirect_to root_path
   end
 end

@@ -65,12 +65,15 @@ en:
   alert:
     confirm_delete: "Are you sure?"
   search: "Search"
+  img_alt:
+    product: "product-img"
   product:
     index: "ID"
     name: "Name"
     image: "Image"
     description: "Description"
     price: "Price"
+    unit: "USD"
     category: "Category"
     parent_category: "Parent category"
     action: "Action"
